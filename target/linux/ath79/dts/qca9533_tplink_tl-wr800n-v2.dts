@@ -1,0 +1,9 @@
+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+//add bye zcz
+
+#include "qca953x_tplink_tl-wr800n_16M.dtsi"
+
+/ {
+	compatible = "tplink,tl-wr800n-v2", "qca,qca9533";
+	model = "TP-Link TL-WR800N v2";
+};

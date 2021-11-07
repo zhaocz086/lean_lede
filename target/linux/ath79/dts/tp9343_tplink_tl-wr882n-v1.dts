@@ -1,0 +1,56 @@
+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+
+#include "tp9343_tplink_tl-wr94x.dtsi"
+
+/ {
+	compatible = "tplink,tl-wr882-v1", "qca,tp9343";
+	model = "TP-Link TL-WR882N v1";
+
+	aliases {
+		led-boot = &led_system;
+		led-failsafe = &led_system;
+		led-running = &led_system;
+		led-upgrade = &led_system;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+
+		led_system: system {
+			label = "tp-link:blue:system";
+			gpios = <&gpio 18 GPIO_ACTIVE_LOW>;
+			default-state = "on";
+		};
+
+		wan_blue {
+			label = "tp-link:blue:wan";
+			gpios = <&gpio 2 GPIO_ACTIVE_LOW>;
+		};
+
+
+		lan1 {
+			label = "tp-link:blue:lan1";
+			gpios = <&gpio 4 GPIO_ACTIVE_LOW>;
+		};
+
+		lan2 {
+			label = "tp-link:blue:lan2";
+			gpios = <&gpio 5 GPIO_ACTIVE_LOW>;
+		};
+
+		lan3 {
+			label = "tp-link:blue:lan3";
+			gpios = <&gpio 6 GPIO_ACTIVE_LOW>;
+		};
+
+		lan4 {
+			label = "tp-link:blue:lan4";
+			gpios = <&gpio 7 GPIO_ACTIVE_LOW>;
+		};
+	};
+};
+
+&eth1 {
+	mtd-mac-address = <&uboot 0x1fc00>;
+//	mtd-mac-address-increment = <(-1)>;
+};
