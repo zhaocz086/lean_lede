@@ -1,0 +1,6 @@
+[submodule "package/zcz/shellinabox"]
+	path = package/zcz/shellinabox
+	url = https://github.com/paradislover/shellinabox.git
+[submodule "package/zcz/luci-theme-rosy"]
+	path = package/zcz/luci-theme-rosy
+	url = https://github.com/rosywrt/luci-theme-rosy.git
