@@ -1,0 +1,18 @@
+--- a/cgi-bin/Makefile
++++ b/cgi-bin/Makefile
+@@ -140,6 +140,15 @@ uninstall:
+ 	done
+ 	-$(RMDIR) $(SERVERBIN)/cgi-bin
+ 
++#
++# libcupscgi.la
++#
++
++libcupscgi.la:    $(LIBOBJS)
++	echo Linking $@...
++	$(LD_CC) $(ALL_LDFLAGS) -o $@ $(LIBOBJS:.o=.lo) $(LINKCUPS)
++	$(CODE_SIGN) -s "$(CODE_SIGN_IDENTITY)" $@
++
+ 
+ #
+ # libcupscgi.a
